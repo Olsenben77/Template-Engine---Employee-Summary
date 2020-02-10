@@ -8,7 +8,7 @@ For our 10th coding camp homework assignment, we had the opportunity to create a
 
 To successfully run this application, the user should first clone the repository into a local file and run npm install. Using the local console, the user will next run "node app.js" to trigger the supplied team-creating prompts. Creating a user specific and unique team is done by answering the given questions and inputing information for each team member. Once the team is created, the user will open their local browser find a completed HTML page that includes their team member choices.
 
-![Example](DeployedApplication.png)
+![Example](Images/DeployedApplication.png)
 
 ## Motivation
 
