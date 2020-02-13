@@ -1,51 +1,63 @@
 "use strict";
 const inquirer = require("inquirer");
 const { writeFile } = require("fs");
-const prompts = require("./prompts");
-const Manager = require("./manager");
-const Engineer = require("./engineer");
-const Intern = require("./intern");
-const Employee = require("./employee");
+const { managerQuestions } = require("./prompts");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Employee = require("./lib/Employee");
 
 const writeFileAsync = promisify(writeFile);
 async function managerInfo() {
-  //   try {
+  try {
+    const answers = await inquirer.prompts(managerQuestions);
 
-  //using try functions are giving error messages
-  const answers = await inquirer.prompts.managerQuestions([]);
+    if (answers.employee === "Intern" || answers.employee === "Engineer") {
+      console.log("Let's assemble your team");
+      employeePrompts();
+      return;
+    }
+    if (answers.employee === "None") {
+      console.log("Team is set");
+      return;
+    }
+    const htmltext = html(prompts.answers);
+    await writeFileAsync("main.html", htmltext, "utf8");
+  } catch (error) {
+    console.log(error);
+  }
 }
-
-if ((managerQuestions.choices === Intern, Engineer)) {
-  console.log("Let's assemble your team");
-  employeePrompts();
-  return;
-}
-if (managerQuestions.choices === none) {
-  console.log("Team is set");
-  return;
-}
-const htmltext = html(prompts.answers);
-await writeFileAsync("main.html", htmltext, "utf8");
-// } catch (error) {
-//   console.log(error);
-// }
 async function internInfo() {
-  const answers = await inquirer.prompts.internQuestions([]);
-}
-if (internQuestions.name === school) {
-  then(managerQuestions.choices);
-  return;
+  try {
+    const internAnswers = await inquirer.prompts(internQuestions);
+
+    if (internAnswers.school === school) {
+      then(answers.employee);
+      return;
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 async function engineerInfo() {
-  const answers = await inquirer.prompts.engineerQuestions([]);
-}
-if (engineerQuestions.name === github) {
-  then(managerQuestions.choices);
-  return;
+  try {
+    const engineerAnswers = await inquirer.prompts.engineerQuestions([]);
+
+    if (engineerAnswers.name === github) {
+      then(answers.choices);
+      return;
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 async function createHTML() {
-  if (managerQuestions === none);
-  open("./engineer", "./intern", "./manager");
+  try {
+    if (answers === "None");
+    open("./lib./Engineer", "./lib./Intern", "./lib./Manager");
+  } catch (error) {
+    console.log(error);
+  }
 }
 function html({ name, id, email, school, officeNumber, github }) {
   return `<!DOCTYPE html>

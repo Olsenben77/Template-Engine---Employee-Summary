@@ -25,10 +25,9 @@ const managerQuestions = [
     type: "input",
     message: "Who else would you like add to your team?",
     choices: ["Intern", "Engineer", "None"],
-    name: "Employee"
+    name: "employee"
   }
 ];
-managerQuestions();
 
 const internQuestions = [
   {
@@ -52,7 +51,7 @@ const internQuestions = [
     name: "school"
   }
 ];
-internQuestions();
+
 const engineerQuestions = [
   {
     type: "input",
@@ -75,7 +74,6 @@ const engineerQuestions = [
     name: "GitHub"
   }
 ];
-engineerQuestions();
 
 module.exports = {
   managerQuestions,
