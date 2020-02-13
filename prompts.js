@@ -4,12 +4,24 @@ const managerQuestions = [
   {
     type: "input",
     message: "Enter your name:",
-    name: "name"
+    name: "name",
+    validate: answer => {
+      if (answer !== "") {
+        return true;
+      }
+      return "Please enter at least one character.";
+    }
   },
   {
     type: "input",
     message: "Enter your email:",
-    name: "email"
+    name: "email",
+    validate: answer => {
+      if (answer !== "sometext@domain") {
+        return true;
+      }
+      return "Please enter a valid email.";
+    }
   },
   {
     type: "number",

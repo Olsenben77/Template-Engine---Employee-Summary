@@ -31,7 +31,7 @@ async function internInfo() {
   try {
     const internAnswers = await inquirer.prompts(internQuestions);
 
-    if (internAnswers.school === school) {
+    if (internAnswers.name === school) {
       then(answers.employee);
       return;
     }
@@ -44,7 +44,7 @@ async function engineerInfo() {
     const engineerAnswers = await inquirer.prompts.engineerQuestions([]);
 
     if (engineerAnswers.name === github) {
-      then(answers.choices);
+      then(answers.employee);
       return;
     }
   } catch (error) {
@@ -53,14 +53,15 @@ async function engineerInfo() {
 }
 async function createHTML() {
   try {
-    if (answers === "None");
+    if (answers.employee === "None");
     open("./lib./Engineer", "./lib./Intern", "./lib./Manager");
   } catch (error) {
     console.log(error);
   }
 }
 function html({ name, id, email, school, officeNumber, github }) {
-  return `<!DOCTYPE html>
+  return(./Templates./managerInfo.html);
+  `<!DOCTYPE html>
    <html lang="en">
      <head>
        <meta charset="UTF-8" />
