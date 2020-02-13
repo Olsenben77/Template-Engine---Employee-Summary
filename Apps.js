@@ -6,6 +6,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Employee = require("./lib/Employee");
+const { promisify } = require("util");
 
 const writeFileAsync = promisify(writeFile);
 async function managerInfo() {
@@ -54,14 +55,13 @@ async function engineerInfo() {
 async function createHTML() {
   try {
     if (answers.employee === "None");
-    open("./lib./Engineer", "./lib./Intern", "./lib./Manager");
+    // open("");
   } catch (error) {
     console.log(error);
   }
 }
 function html({ name, id, email, school, officeNumber, github }) {
-  return(./Templates./managerInfo.html);
-  `<!DOCTYPE html>
+  return `<!DOCTYPE html>
    <html lang="en">
      <head>
        <meta charset="UTF-8" />
